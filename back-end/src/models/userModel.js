@@ -19,9 +19,19 @@ const ListUser = async () => {
     return ListUser
 }
 
+const ValidateUser = async (Email) =>{
+
+const query = 'SELECT * FROM Usuarios WHERE Email = ?';
+
+const ValidateUser = await connection.execute(query,[Email])
+
+return ValidateUser
+}
+console.log(ValidateUser('alefedonato1@gmail.com.br'))
 module.exports = {
     createUser,
-    ListUser
+    ListUser,
+    ValidateUser
 }
 
 
