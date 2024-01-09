@@ -1,7 +1,9 @@
 const validatePhone = require('../utils/validateTelefone')
 
-const validateName = (req, res, next) => {
+const userModel = require('../models/userModel')
+const userController = require('../controllers/userController')
 
+const validateName = (req, res, next) => {
     const { body } = req
 
     if (body.Nome === undefined) {
@@ -49,9 +51,12 @@ const validateSenha = (req, res, next) => {
 }
 
 
+
+
 module.exports = {
     validateName,
     validateEmail,
     validateTelefone,
-    validateSenha
+    validateSenha,
+    
 }
